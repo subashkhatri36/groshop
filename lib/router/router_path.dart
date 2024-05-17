@@ -1,0 +1,14 @@
+const String loginPath = '/';
+const String homeRoutePath = '/home';
+const String signUpPath = '/signUp';
+const String signUpSuccessfulPath = '/signupSuccess';
+const String navPath = '/navpath';
+const String startPagePath = '/startPage';
+const String favPath = '/favpath';
+const String cartPath = '/cart';
+const String paymentPath = '/payment';
+const String checkOutPath = '/checkOut';
+const String productDetailPagepath = '/productDetail';
+const String pinPath = '/pin';
+const String profilePath = '/profile';
+const String paymentSuccessful = '/paymentSuccess';
