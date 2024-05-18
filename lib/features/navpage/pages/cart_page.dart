@@ -6,7 +6,6 @@ import 'package:groshop/cores/components/appbar_widget.dart';
 import 'package:groshop/cores/components/groshop_page.dart';
 import 'package:groshop/cores/components/icon_button.dart';
 import 'package:groshop/cores/dimension/dimension.dart';
-import 'package:groshop/features/navpage/product_model.dart';
 
 class CartPage extends StatefulWidget {
   const CartPage({
@@ -27,7 +26,6 @@ class _CartPageState extends State<CartPage> {
   double totalAmount = 0;
   @override
   void initState() {
-    myCartProductList?.forEach((e) => totalAmount += (e.qty * e.price));
     super.initState();
   }
 
@@ -54,10 +52,10 @@ class _CartPageState extends State<CartPage> {
                         child: SingleChildScrollView(
                           child: ListView.builder(
                               shrinkWrap: true,
-                              itemCount: myCartProductList
-                                  .length, // state.cartList?.length ?? 0,
+                              itemCount: state.cartList?.length ?? 0,
                               itemBuilder: (context, index) {
-                                final cartItem = myCartProductList[index];
+                                final cartItem = state.cartList![index];
+                                totalAmount += (cartItem.qty * cartItem.price);
                                 return Padding(
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 8.0, vertical: 10),

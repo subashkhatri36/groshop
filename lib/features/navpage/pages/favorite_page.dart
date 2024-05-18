@@ -6,7 +6,6 @@ import 'package:groshop/cores/components/appbar_widget.dart';
 import 'package:groshop/cores/components/grid_view_widget.dart';
 import 'package:groshop/cores/components/groshop_page.dart';
 import 'package:groshop/cores/dimension/dimension.dart';
-import 'package:groshop/features/navpage/product_model.dart';
 
 class FavoritePage extends StatefulWidget {
   const FavoritePage({Key? key, required this.backIconClick}) : super(key: key);
@@ -36,7 +35,7 @@ class _FavoritePageState extends State<FavoritePage> {
                   const Gap(smallSpacing),
                   Expanded(
                     child: GridViewWidget(
-                      currentSelectedProduct: productFavList ?? [],
+                      currentSelectedProduct: state.favroitList ?? [],
                     ),
                   ),
                 ],

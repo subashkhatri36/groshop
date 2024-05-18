@@ -112,31 +112,38 @@ class AddProduct extends BaseEvent {
 class AppBloc extends Bloc<BaseEvent, AppState> {
   AppBloc(super.initialState) {
     on<AddFavroit>((event, emit) {
-      final favList = state.favroitList;
-      favList?.add(event.productModel);
+      List<ProductModel> favList = [];
+      favList.addAll(state.favroitList ?? []);
+      favList.add(event.productModel);
       emit(state.copyWith(favroitList: favList));
     });
     on<RemoveFavroit>((event, emit) {});
     on<AddCart>((event, emit) {
-      final cartList = state.cartList;
-
-      cartList?.add(event.productModel);
+      List<ProductModel> cartList = [];
+      cartList.addAll(state.cartList ?? []);
+      cartList.add(event.productModel);
       emit(state.copyWith(cartList: cartList));
     });
     on<RemoveCart>((event, emit) {
-      final cartList = state.cartList;
+      List<ProductModel> cartList = [];
+      cartList.addAll(state.cartList ?? []);
       emit(state.copyWith(cartList: cartList));
     });
     on<IncreaseQty>((event, emit) {
+      print('herer');
       ProductModel productModel = event.productModel;
-      productModel.copyWith(qty: productModel.qty + 1);
+      int qty = productModel.qty;
+
+      productModel.copyWith(qty: qty++);
       emit(state.copyWith(productDetail: productModel));
     });
     on<DecreaseQty>((event, emit) {
+      print('here');
       ProductModel productModel = event.productModel;
       int qty = productModel.qty;
+
       if (qty > 0) {
-        productModel.copyWith(qty: productModel.qty - 1);
+        productModel.copyWith(qty: qty - 1);
         emit(
           state.copyWith(productDetail: productModel),
         );
