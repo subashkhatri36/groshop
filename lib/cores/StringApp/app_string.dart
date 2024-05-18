@@ -25,8 +25,7 @@ const String accessAll = 'to access all';
 //[Start Page]
 const String groceryShop = 'Grocery Shop';
 const String easyWayToBuyGroceryShopping =
-    'The easiest way to buy your grocery';
-const String shopping = 'Shopping';
+    'The easiest way to buy your\ngrocery Shopping';
 
 //[Menu]
 const String home = 'Home';

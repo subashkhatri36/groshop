@@ -32,10 +32,7 @@ class StartPage extends StatelessWidget {
           ShadowText(
             easyWayToBuyGroceryShopping,
             style: textStyle.copyWith(color: Colors.black54),
-          ),
-          ShadowText(
-            shopping,
-            style: textStyle.copyWith(color: Colors.black54),
+            aign: TextAlign.center,
           ),
           const Gap(extraLargeSpacing),
           SizedBox(
